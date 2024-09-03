@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: my-java-app
+    env: docker
+    image: akotorrii/my-private-repo:latest
+    plan: free
+    healthCheckPath: /
+    autoDeploy: true
