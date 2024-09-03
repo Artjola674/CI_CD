@@ -33,7 +33,6 @@ jobs:
     - name: Verify Target Directory
       run: ls -la target
 
-
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
