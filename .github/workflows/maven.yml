@@ -48,4 +48,4 @@ jobs:
         curl -X POST -d '{}' \
         -H "Accept: application/json" \
         -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-        https://api.render.com/v1/services/YOUR_SERVICE_ID/deploys
+        https://api.render.com/v1/services/CI-CD-Demo/deploys
