@@ -13,6 +13,11 @@ public class Controller {
 
     @GetMapping("/test1")
     public String test1() {
-        return "This is an app used for testing CI/CD pipelines";
+        return "This is an app used for testing CI/CD pipelines 1";
+    }
+
+    @GetMapping("/test2")
+    public String test2() {
+        return "This is an app used for testing CI/CD pipelines 2";
     }
 }
