@@ -1,6 +1,10 @@
 name: Deploy to Render
 
 on: 
+  workflow_run:
+   workflows: ["Java CI with Maven"]
+   types:
+     - success
   push:
     branches: [ "master" ]
 
