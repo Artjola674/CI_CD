@@ -14,7 +14,7 @@ class CiCdApplicationTests {
 
 	@Test
 	void test_fails() {
-		assertThat("", 1==1);
+		assertThat("", 1==2);
 	}
 
 }
