@@ -41,3 +41,13 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Create marker file
+      run: echo "success" > .workflow-a-success
+      if: success()
+        
+    - name: Upload marker file
+      uses: actions/upload-artifact@v2
+      with:
+        name: marker-file
+        path: .workflow-a-success
