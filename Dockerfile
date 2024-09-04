@@ -1,4 +1,3 @@
-
 FROM openjdk:21
 
 EXPOSE 8083
