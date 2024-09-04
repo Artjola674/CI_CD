@@ -3,15 +3,28 @@ name: Deploy to Render
 on: 
   push:
     branches: [ "master" ]
-  workflow_run:
-    workflows: ["Java CI with Maven"]  
-    types:
-      - completed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Download marker file
+      uses: actions/download-artifact@v2
+      with:
+        name: marker-file
+        path: ./
+
+    - name: Check for marker file
+      id: marker-check
+      run: |
+        if [ ! -f .workflow-a-success ]; then
+          echo "Marker file not found. Exiting."
+          exit 1
+        fi
+
     - name: Trigger Render Deploy
       run: |
         curl -X POST -d '{}' \
