@@ -5,8 +5,8 @@ on:
    workflows: ["Java CI with Maven"]
    types:
      - success
-  push:
-    branches: [ "master" ]
+  # push:
+  #   branches: [ "master" ]
 
 jobs:
   deploy:
