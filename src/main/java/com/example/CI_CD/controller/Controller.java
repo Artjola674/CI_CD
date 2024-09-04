@@ -10,4 +10,9 @@ public class Controller {
     public String test() {
         return "This is an app used for testing CI/CD pipelines";
     }
+
+    @GetMapping("/test1")
+    public String test1() {
+        return "This is an app used for testing CI/CD pipelines";
+    }
 }
