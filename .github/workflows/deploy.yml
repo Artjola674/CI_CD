@@ -1,6 +1,6 @@
 name: Deploy to Render
 
-on:
+on: 
   push:
     branches: [ "master" ]
   workflow_run:
@@ -12,17 +12,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v6
-      with:
-        image: akotorrii/my-private-repo
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Trigger Render Deploy
       run: |
         curl -X POST -d '{}' \
         -H "Accept: application/json" \
         -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-        https://api.render.com/v1/services/srv-crbgr5tsvqrc73f0cl90/deploys
+        https://api.render.com/v1/services/srv-crbht3a3esus73923rh0/deploys
