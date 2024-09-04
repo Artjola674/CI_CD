@@ -10,4 +10,9 @@ class CiCdApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void test_fails() {
+		assertThat("", 1==2);
+	}
+
 }
